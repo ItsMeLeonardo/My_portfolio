@@ -1,0 +1,163 @@
+@media screen and (max-width: 1024px){
+    /* hero responsive */
+    .hero{
+        height: auto;
+        position: relative;
+    }
+    .text_hero{
+        position: relative;
+        z-index: 10;
+    }
+    .hero_image{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+    }
+}
+@media screen and (max-width: 767px){
+    /* header responsive */
+    .button_burger{
+        display: flex;
+        top: .1em;
+        left: .1em;
+        z-index: 30;
+    }
+    .menu{
+        height: inherit;
+        background-color: rgba(47, 28, 89, .98);
+        position: fixed;
+        z-index: 15;
+        left: -100%;
+        top: 0;
+        width: 100vw;
+        transition: .5s;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu.menu_active{
+        left: 0;
+    }
+    .header{
+        display: block;
+        height: auto;
+    }
+    .container_link{
+        display: block;
+    }
+    .link{
+        justify-content: center;
+        font-size: 2em;
+        margin: .5em 0;
+    }
+    .menu_links{
+        height: 50px;
+
+    }
+    .logo{
+        text-align: center;
+        padding-top: 10px;
+    }
+    .container_logo{
+        display: block;
+        text-align: center;
+    }
+    /* hero */
+    .text_hero{
+        font-size: 2em;
+    }
+    /*  projets responsive */
+    .project_imageCotainer, .projet_details{
+        width: auto;
+    }
+    .project_resource, .project_url, .project_date, .project_title{
+        margin: .4em 0;
+    }
+    .projet_details{
+        font-size: 16px;
+    }
+    .project_title{
+        font-size: 1.5em;
+    }
+    .project_resource{
+        font-size: 0.7em;
+    } 
+    .project_date, .project_url{
+        font-size: 1em;
+    }
+    .project_description{
+        font-size:0.8em;
+    }
+    /* experiencia responsive */
+    .experience{
+        width: auto;
+        flex-shrink: initial;
+    }
+    .experience_image{
+        width: 100%;
+    }
+    .experience_details{
+        margin: -2em .5em .5em;
+        padding: 1em;
+    }
+    /* contacto */
+    .social{
+        font-size: 14px;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 480px){
+    /* header */
+    /* .button_burger{
+        height: auto;
+        width: auto;
+    } */
+      /* hero */
+    .text_hero{
+        font-size: 1.5em;
+    }
+    .hero_image{
+        top: -10em;
+    }
+    /* portfolio */
+    .projet_details{
+        font-size: 12px;
+    }
+    .contact{
+        width:auto;
+        text-align: center;
+        display: block;
+        padding: 1em;
+        height: auto;
+    }
+    .form_email_button{
+        margin: 1em auto;
+    }
+    .social_link{
+        margin: auto;
+    }
+    .social_link.github{
+        margin-right: .5em;
+    }
+    .form_email{
+        margin-top: 0;
+    }
+    .footer{
+        display: block;
+        text-align: center;
+        border: 1px solid transparent;
+    }
+    .footer_theme, .footer_autor, .correo{
+        margin: .5em 0;
+    }
+}
+@media screen and (max-width: 320px){
+    .hero_image{
+        display: none;
+    }
+    .fab{
+        font-size: 2em;
+    }
+}

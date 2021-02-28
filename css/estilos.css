@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2? family = Montserrat & family = Poppins: wght @ 900 & display = swap');
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Poppins', sans-serif;
+    /* font-weight: normal; para definir el peso de la letra*/
+    /* font-style: italic; estilo de la fuente*/
+}
+h1{/* espaciado entre lineas, esto es relativo con el tamaño de la letra*/
+    line-height: 1.5;/* es lo mismo que poner 150% (1 = 100%) */
+    font-size: 35px;/* asignamos el tamaño de la fuente */
+    letter-spacing: -.5px;/* traking */
+    /* text-decoration: underline; decoramos la fuente */
+    color: white;
+}
+ol, ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+figure{
+    margin: 0;
+}
+
+/* -----ejemplo flexBox----------- */
+.flexBox{/* hacemos que la caja sea flexible, cuando hay muchos elementos que no caben en la pantalla hace que las cajas se deformen */
+    display: flex;
+    /*flex-direction: column; */  /* podemos designar la direccion de en la que se alinian las cajas (row-filas | column-columnas) */
+    flex-wrap: wrap;/* con flex-wrap hacemos que las cajas pasen abajo cuando no quepan en la pantalla */
+    /* tipos de espaciados(around-evenly-between) */
+    justify-content: space-between;/* para alinear los contenidos hijos */
+    align-items: center;
+    height: 300px;
+}
+.box{
+    /* margin: 10px; */
+    width: 50px;
+    height: 50px;
+    border: 1px solid red;
+    /* para evitar  que la caja se encoja usasmos shrink que recibe valores entre (0 = no encogererce-1) */
+    flex-shrink: 0;
+}
+:root{/* variables */
+    /* colores */
+    --color-gris-dark: #1d252c;
+    --color-gris-light: #626262;
+    --color-gris-background: #091026;
+    --color-purple-background: #2F1C59;
+    --transparent-skyblue: #026fff12;
+    --color-purple: #D92378;
+    /* sombras */
+    --shadow-box: 0 4px 10px rgba(0, 0, 0, 0.281);
+    --shadow-center: 0 0 10px rgba(0, 0, 0, 0.281);
+}
+/* Containers */
+.container{
+    display: inherit;
+    height: inherit;
+    margin: 0 auto;
+    justify-content: inherit;
+    align-items: inherit;
+    max-width: 80%;
+    flex: 1;
+    flex-wrap: inherit;
+}
+
+/* header */
+.button_burger{
+    background-color: rgb(0 0 0 / 44%);
+    display: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    position: fixed;
+    color: white;
+    left: .5em;
+    top: .5em;
+}
+.header{
+    background-color: var(--color-purple-background);
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    position: relative;
+    box-shadow: var(--shadow-box);
+    align-items: center;
+    flex-wrap: wrap;
+}
+.logo{
+    height: 35px;
+}
+.container_link{
+    display: flex;
+    height: inherit;
+}
+.menu_links{
+    height: inherit;
+}
+.link{
+    display: flex;
+    height: inherit;
+    text-decoration: none;
+    align-items: center;
+    padding: 0 10px;
+    color: white;
+}
+.link:hover{
+    color: var(--color-purple);
+}
+/* principal */
+.hero{
+    height: 300px;
+    background-color: var(--color-gris-background);
+    /* background-image: url('../images/valle.jpg'); */
+    /* background-size: witdh height; */
+    /* background-size: 500px 400px; */
+    /* background-repeat: no-repeat; */
+    /* background-position-x: right; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.hero strong{
+    color: var(--color-purple);
+}
+.hero-image{
+    height: 100%;
+}
+/* portafolios */
+.project{
+    margin: 5px 10px;
+    padding: 10px;
+    border: none;
+    /* border-radius: top-left | top-right | bootom-right | bottom left */
+    border-radius: 8px;
+    box-shadow: var(--shadow-box);
+    /* el display flex se aplica al padre y afecta a sus hijos directos */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.projet_details{
+    width: 500px;
+}
+.project_resource{
+    color: #450135;
+}
+.project_url{
+    display: inline-block;
+    color: white;
+    margin: 10px auto 5px;
+    padding: 5px 10px;
+    background-color: var(--color-purple);
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: var(--shadow-center);
+    transition: 0.8s;
+}
+.project_url:hover{
+    background-color: transparent;
+    color: var(--color-purple);
+}
+.project_imageCotainer{
+    margin: 0 20px;
+    /* width: 500px; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.project_image{
+    height: 350px;
+    border-radius: 17px;
+    box-shadow: var(--shadow-center);
+    margin: 10px 20px;
+}
+/* experiencia */
+.experience_general{
+    padding: 10px 20px;
+}
+.experience_list{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap; 
+}
+.experience{
+    margin: 1%;
+    width: 48%;
+    flex-shrink: 0;
+    border-radius: 10px;
+    /* para hacer que un elemento se oculte si sale de la caja */
+    overflow: hidden;
+    background-color: var(--transparent-skyblue);
+}
+/* .experience_image{
+    object-fit: cover;
+    vertical-align: middle;
+} */ 
+.experience_details{
+    text-align: center;
+    margin: -40px 30px 20px;
+    padding: 20px;
+    background-color: white;
+    position: relative;
+}
+.experience_title{
+    text-transform: capitalize;
+}
+.experience_description{
+    text-align: center;
+}
+.experience_url{
+    color: var(--color-purple);
+    border: 1px solid;
+    padding: 5px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.8s;
+    box-shadow: var(--shadow-center);
+}
+.experience_url:hover{
+    color: white;
+    background-color: var(--color-purple);
+    border: none;
+}
+/* contact */
+.form_email_input {
+    background-color: var(--transparent-skyblue);
+    border: 1px solid white;
+    padding: 5px 20px;
+    border-radius: 8px;
+    color: white;
+}
+.form_email_input:focus{
+    background-color: white;
+    color: black;
+    outline: none;
+    box-shadow: 0 0 10px var(--color-purple);
+}
+.form_email_button{
+    margin: 10px 0;
+    display: block;
+    padding: 5px 20px;
+    background-color: var(--color-purple);
+    border: none;
+    box-shadow: var(--shadow-box);
+    border-radius: 4px;
+    cursor: pointer;
+    font-family:'Montserrat', sans-serif; 
+    color: white;
+}
+.form_email_button:hover{
+    box-shadow: 0 0 10px var(--color-purple);
+    /* box-shadow: var(--shadow-center); */
+    background-color: transparent;
+    color: var(--color-purple);
+}
+
+.contact{
+    background-color: var(--color-gris-background);
+    color: white;
+    /* height: 150px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    /* flex-wrap: wrap; */
+}
+.social{
+    display: flex;
+    font-size: 16px;
+}
+.social_link{
+    /* background-color: white; */
+    width: 50px;
+    height: 50px;
+    /* display: inline-block; */
+    /* background-size: 50px 50px; */
+    margin: 0 1em;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+}
+.fab{
+    font-size: 5em;
+    margin: 0 .05em;
+    color: var(--color-gris-light);
+    transition: .5s;
+}
+.fab:hover{
+    color: var(--color-purple);
+}
+
+
+/* .social_link.twitter{
+    background-image: url(../images/Twitter.webp); 
+}
+.social_link.facebook{
+    background-image: url(../images/facebook.webp); 
+}
+.social_link.github{
+    background-image: url(../images/Git_hub.webp); 
+}
+.social_link.linkedin{
+    background-image: url(../images/linkedin.webp); 
+} */
+
+
+/* footer */
+.footer{
+    background-color: var(--color-purple-background);
+    display: flex;
+    justify-content: space-between;
+    /* height: 50px; */
+    color: white;
+    align-items: center;
+    padding: 0 10px;
+    flex-wrap: wrap;
+}
+.correo {
+    text-decoration: none;
+    color: white;
+    transition: 0.5s;
+}
+.correo:hover{
+    color:var(--color-purple);
+}
